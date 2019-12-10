@@ -13,8 +13,12 @@ class CreateFactuursTable extends Migration
      */
     public function up()
     {
-        Schema::create('factuurs', function (Blueprint $table) {
+        Schema::create('facturen', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('facturen_id');
+            $table->char('facturen_invoice_nummer');
+            $table->date('facturen_datum');
+            $table->char('klanten_contact_persoon');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateFactuursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factuurs');
+        Schema::dropIfExists('facturen');
     }
 }

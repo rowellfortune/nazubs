@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('admin/dashboard') }}">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -78,15 +78,14 @@
                     @endauth
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
                     NAZUBS
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Klanten Beheer</a>
-                    <a href="https://laracasts.com">Factureren</a>
+                    <a href="{{ url('admin/klanten') }}">Klanten Beheer</a>
+                    <a href="{{ url('admin/dashboard') }}">Factureren</a>
                 </div>
             </div>
         </div>

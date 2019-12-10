@@ -14,7 +14,8 @@ class AdminKlantenController extends Controller
      */
     public function index()
     {
-        //
+        // $users = Klant::all();
+        return view('admin.klanten.index', compact('klanten'));
     }
 
     /**
@@ -25,6 +26,7 @@ class AdminKlantenController extends Controller
     public function create()
     {
         //
+        return view('admin.klanten.create', compact('klanten'));
     }
 
     /**

@@ -15,6 +15,7 @@ class AdminFacturenController extends Controller
     public function index()
     {
         //
+        return view('admin.facturen.index', compact('klanten'));
     }
 
     /**
