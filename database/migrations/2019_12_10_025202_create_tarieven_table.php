@@ -15,6 +15,10 @@ class CreateTarievenTable extends Migration
     {
         Schema::create('tarieven', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->char('type');
+            $table->integer('per_persoon');
+            $table->char('munteenheid');
+            $table->integer('prijs');
             $table->timestamps();
         });
     }

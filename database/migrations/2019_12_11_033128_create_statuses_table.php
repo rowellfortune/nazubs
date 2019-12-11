@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKoersenTable extends Migration
+class CreateStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateKoersenTable extends Migration
      */
     public function up()
     {
-        Schema::create('koersen', function (Blueprint $table) {
+        Schema::create('statuses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('exchange_rate');
             $table->string('name');
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ class CreateKoersenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('koersen');
+        Schema::dropIfExists('statuses');
     }
 }

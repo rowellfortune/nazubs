@@ -15,17 +15,16 @@ class CreateKlantsTable extends Migration
     {
         Schema::create('klanten', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('klanten_id');
-            $table->string('klanten_bedrijf_naam');
-            $table->string('klanten_contact_persoon');
-            $table->string('klanten_adress');
-            $table->integer('klanten_postcode');
-            $table->string('klanten_woonplaats');
-            $table->integer('klanten_telefoon');
-            $table->integer('klanten_fax');
-            $table->integer('klanten_mobiel');
+            $table->string('bedrijf_naam');
+            $table->string('contact_persoon');
+            $table->string('adres');
+            $table->integer('postcode');
+            $table->string('woonplaats');
+            $table->integer('telefoon');
+            $table->integer('fax');
+            $table->integer('mobiel');
             $table->string('email');
-            $table->string('klanten_website');
+            $table->string('website');
             $table->timestamps();
         });
     }

@@ -13,12 +13,11 @@ class CreateFactuursTable extends Migration
      */
     public function up()
     {
-        Schema::create('facturen', function (Blueprint $table) {
+        Schema::create('factuurs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('facturen_id');
-            $table->char('facturen_invoice_nummer');
-            $table->date('facturen_datum');
-            $table->char('klanten_contact_persoon');
+            $table->integer('invoice_nummer');
+            $table->date('datum');
+            $table->char('contact_persoon');
             $table->timestamps();
         });
     }

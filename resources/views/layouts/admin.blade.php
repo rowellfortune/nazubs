@@ -26,13 +26,10 @@
   <link rel="stylesheet" href="{{asset('lib/summernote/summernote-bs4.css')}}" rel="stylesheet">
 
   <link href="{{asset('css/app.css')}}" rel="stylesheet">
-
     </head>
-    <body>
       <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
-         
-            <!-- Navbar -->
+          <!-- Navbar -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
               <!-- Left navbar links -->
               <ul class="navbar-nav">
@@ -50,18 +47,16 @@
                   <a href="#" class="nav-link">Contact</a>
                 </li> --}}
                 <li class="nav-item d-none d-sm-inline-block">
-                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                  <a href="{{ route('logout') }}" class="btn btn btn-primary" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
                   </form>
                 </li>
               </ul>
-            
-                
-              
+
             </nav>
-         
-      <!-- /.navbar -->
+          <!-- /.navbar -->
+
           @section('sidebar')
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
               <!-- Brand Logo -->
@@ -70,17 +65,7 @@
               </a>
           
               <!-- Sidebar -->
-              <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                  <div class="image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                  </div>
-                  <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
-                  </div>
-                </div>
-          
+              <div class="sidebar">              
                 <!-- Sidebar Menu -->
                   <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -139,23 +124,27 @@
               <!-- /.sidebar -->
             </aside>
           @show
-
-        <div class="container">
+        
+        <div class="content-wrapper">
             @yield('content')
         </div>
-        
-      </div>
+        <!-- Main Footer -->
+        <footer class="main-footer">
+          <!-- To the right -->
+          <div class="float-right d-none d-sm-inline">
+              Anything you want
+          </div>
+          <!-- Default to the left -->
+          <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">UNASAT Suriname | Rowell Fortune & Groep A</a>.</strong> All rights reserved.
+        </footer>
+        <!-- ./wrapper -->
+    </div>
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-      <!-- To the right -->
-      <div class="float-right d-none d-sm-inline">
-        Anything you want
-      </div>
-      <!-- Default to the left -->
-      <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">UNASAT Suriname | Rowell Fortune & Groep A</a>.</strong> All rights reserved.
-  </footer>
-      <!-- ./wrapper -->
-
+    <!-- jQuery -->
+<script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('dir/js/adminlte.min.js') }}"></script>
     </body>
 </html>

@@ -13,8 +13,12 @@ class CreateAppartementenTable extends Migration
      */
     public function up()
     {
-        Schema::create('appartementen', function (Blueprint $table) {
+        Schema::create('appartementens', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('appartementen_id');
+            $table->integer('status_id')->index()->unsigned()->nullable();
+            $table->string('name');
+            $table->integer('prijs');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateAppartementenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appartementen');
+        Schema::dropIfExists('appartementens');
     }
 }

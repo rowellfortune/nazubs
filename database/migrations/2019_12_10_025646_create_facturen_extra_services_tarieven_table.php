@@ -15,6 +15,9 @@ class CreateFacturenExtraServicesTarievenTable extends Migration
     {
         Schema::create('facturen_extra_services_tarieven', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('facturen_id');
+            $table->integer('extra_services_id');
+            $table->integer('contact_name');
             $table->timestamps();
         });
     }

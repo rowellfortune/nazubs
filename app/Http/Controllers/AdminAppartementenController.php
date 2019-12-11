@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Status;
+use App\Appartementen;
 use Illuminate\Http\Request;
 
 class AdminAppartementenController extends Controller
@@ -14,7 +15,8 @@ class AdminAppartementenController extends Controller
     public function index()
     {
         //
-        return view('admin.appartementen.index', compact('klanten'));
+        $appartementen = Appartementen::all();
+        return view('admin.appartementen.index', compact('appartementen'));
     }
 
     /**
@@ -25,6 +27,8 @@ class AdminAppartementenController extends Controller
     public function create()
     {
         //
+        // $roles = Appartementen::lists('name','id')->all();
+        return view('admin.appartementen.create', compact('appartementen'));
     }
 
     /**
@@ -36,6 +40,7 @@ class AdminAppartementenController extends Controller
     public function store(Request $request)
     {
         //
+      
     }
 
     /**
@@ -47,6 +52,7 @@ class AdminAppartementenController extends Controller
     public function show($id)
     {
         //
+        return view('admin.appartementen.show', compact('appartementen'));
     }
 
     /**
@@ -58,6 +64,7 @@ class AdminAppartementenController extends Controller
     public function edit($id)
     {
         //
+        return view('admin.appartementen.edit', compact('klanten'));
     }
 
     /**
